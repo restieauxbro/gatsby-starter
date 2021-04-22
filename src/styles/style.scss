@@ -1,0 +1,332 @@
+/* import fonts */
+@import url("https://use.typekit.net/yuq7lfb.css");
+
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,700;1,400&display=swap");
+
+/* CSS Custom Properties Definitions */
+body {
+  --maxWidth-none: "none";
+  --maxWidth-xs: 20rem;
+  --maxWidth-sm: 24rem;
+  --maxWidth-md: 28rem;
+  --maxWidth-lg: 32rem;
+  --maxWidth-xl: 36rem;
+  --maxWidth-2xl: 42rem;
+  --maxWidth-3xl: 48rem;
+  --maxWidth-4xl: 56rem;
+  --maxWidth-full: "100%";
+  --maxWidth-wrapper: 1800px;
+  --spacing-px: "1px";
+  --spacing-0: 0;
+  --spacing-1: 0.25rem;
+  --spacing-2: 0.5rem;
+  --spacing-3: 0.75rem;
+  --spacing-4: 1rem;
+  --spacing-5: 1.25rem;
+  --spacing-6: 1.5rem;
+  --spacing-8: 2rem;
+  --spacing-10: 2.5rem;
+  --spacing-12: 3rem;
+  --spacing-16: 4rem;
+  --spacing-20: 5rem;
+  --spacing-24: 6rem;
+  --spacing-32: 8rem;
+  --fontFamily-sans: futara, "Open Sans", Montserrat, system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+    "Noto Color Emoji";
+  --fontFamily-serif: ivymode, "gallery_modernregular", "Merriweather",
+    "Georgia", Cambria, "Times New Roman", Times, serif;
+  --font-body: var(--fontFamily-sans);
+  --font-heading: var(--fontFamily-serif);
+  --fontWeight-normal: 400;
+  --fontWeight-medium: 500;
+  --fontWeight-semibold: 600;
+  --fontWeight-bold: 700;
+  --fontWeight-extrabold: 800;
+  --fontWeight-black: 900;
+  --fontSize-root: 16px;
+  --lineHeight-none: 1;
+  --lineHeight-tight: 1.1;
+  --lineHeight-normal: 1.4;
+  --lineHeight-relaxed: 1.625;
+  /* 1.200 Minor Third Type Scale */
+  --fontSize-0: 0.833rem;
+  --fontSize-1: 1rem;
+  --fontSize-2: 1.2rem;
+  --fontSize-3: 1.44rem;
+  --fontSize-4: 1.728rem;
+  --fontSize-5: 2.074rem;
+  --fontSize-6: 2.488rem;
+  --fontSize-7: 2.986rem;
+  --fontSize-headings: clamp(6rem, 7vw, 10rem);
+  --color-primary: #005b99;
+
+  --color-text-light: #747b86;
+  --color-accent: #d1dce5;
+  --white: #f6f6f6;
+  --off-white: #f1f1f1;
+  --dark-grey-rgb: 38, 38, 42;
+  --dark-grey: rgb(var(--dark-grey-rgb));
+  --darker-grey: rgb(30, 30, 33);
+
+  --background: linear-gradient(to top, pink, white);
+  --bg: rgb(245, 245, 245);
+  --color-text: var(--dark-grey);
+  --color-heading: rgb(63, 62, 62);
+  --bg-2: var(--off-white);
+  --shadow: rgba(0, 0, 0, 0.2);
+
+  background-color: var(--bg);
+  transition: background-color 0.5s ease;
+}
+
+body.dark {
+  --background: var(--dark-grey);
+  --bg: var(--dark-grey);
+  --bg-2: var(--darker-grey);
+  --bg-rgb: var(--dark-grey-rgb);
+  --color-text: var(--white);
+  --color-heading: var(--white);
+  --lowlight: var(--color-text-light);
+  --shadow: rgba(0, 0, 0, 0.4);
+
+  font-family: "Open sans";
+}
+
+/* HTML elements */
+
+*,
+:after,
+:before {
+  box-sizing: border-box;
+}
+
+html {
+  line-height: var(--lineHeight-normal);
+  font-size: var(--fontSize-root);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--fontSize-1);
+  color: var(--color-text);
+  background-color: var(--bg);
+  overflow-x: hidden;
+}
+
+hr {
+  background: var(--color-accent);
+  height: 1px;
+  border: 0;
+}
+
+/* Heading */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  margin-top: var(--spacing-12);
+  margin-bottom: var(--spacing-6);
+  line-height: var(--lineHeight-tight);
+  letter-spacing: -0.025em;
+  transition: color 0.5s ease;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: var(--fontWeight-normal);
+  color: var(--color-heading);
+}
+
+h1 {
+  font-weight: var(--fontWeight-medium);
+  font-size: var(--fontSize-headings);
+  color: var(--color-heading);
+  @media (max-width: 700px) {
+    font-size: 3em;
+  }
+}
+
+h2 {
+  font-size: 4rem;
+  @media (max-width: 700px) {
+    font-size: 2.3em;
+  }
+}
+
+h3 {
+  font-size: 3rem;
+  @media (max-width: 700px) {
+    font-size: 2em;
+  }
+}
+
+h4 {
+  font-size: var(--fontSize-3);
+}
+
+h5 {
+  font-size: var(--fontSize-2);
+}
+
+h6 {
+  font-size: var(--fontSize-1);
+}
+
+h1 > a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h2 > a,
+h3 > a,
+h4 > a,
+h5 > a,
+h6 > a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Prose */
+
+p {
+  line-height: var(--lineHeight-relaxed);
+  --baseline-multiplier: 0.179;
+  --x-height-multiplier: 0.35;
+  margin: var(--spacing-0) var(--spacing-0) var(--spacing-8) var(--spacing-0);
+  padding: var(--spacing-0);
+}
+
+ul,
+ol {
+  margin-left: var(--spacing-0);
+  margin-right: var(--spacing-0);
+  //padding: var(--spacing-0);
+  margin-bottom: var(--spacing-8);
+  list-style-position: outside;
+  list-style-image: none;
+}
+
+ul li,
+ol li {
+  padding-left: var(--spacing-0);
+  margin-bottom: calc(var(--spacing-8) / 2);
+}
+
+li > p {
+  margin-bottom: calc(var(--spacing-8) / 2);
+}
+
+li *:last-child {
+  margin-bottom: var(--spacing-0);
+}
+
+li > ul {
+  margin-left: var(--spacing-8);
+  margin-top: calc(var(--spacing-8) / 2);
+}
+
+blockquote {
+  color: var(--color-text-light);
+  margin-left: calc(-1 * var(--spacing-6));
+  margin-right: var(--spacing-8);
+  padding: var(--spacing-0) var(--spacing-0) var(--spacing-0) var(--spacing-6);
+  border-left: var(--spacing-1) solid var(--color-primary);
+  font-size: var(--fontSize-2);
+  font-style: italic;
+  margin-bottom: var(--spacing-8);
+}
+
+blockquote > :last-child {
+  margin-bottom: var(--spacing-0);
+}
+
+blockquote > ul,
+blockquote > ol {
+  list-style-position: inside;
+}
+
+table {
+  width: 100%;
+  margin-bottom: var(--spacing-8);
+  border-collapse: collapse;
+  border-spacing: 0.25rem;
+}
+
+table thead tr th {
+  border-bottom: 1px solid var(--color-accent);
+}
+
+/* Link */
+
+a {
+  color: var(--color-primary);
+  &:focus-visible {
+    outline: none;
+  }
+}
+
+a:hover,
+a:focus {
+  text-decoration: none;
+}
+
+/* Custom classes */
+
+.margin {
+  max-width: 2000px;
+  padding: 0 var(--spacing-12);
+  margin: 0 auto;
+  @media (max-width: 700px) {
+    padding: 0 var(--spacing-6);
+  }
+
+  &.large {
+    max-width: 1600px;
+  }
+  &.small {
+    max-width: 900px;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+  grid-gap: 1rem;
+  @media (max-width: 600px) {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+}
+
+.line {
+  background-color: var(--lowlight);
+  position: relative;
+  &.horizontal {
+    height: 1px;
+    width: 100%;
+    margin: 1rem 0;
+  }
+  &.vertical {
+    height: 100%;
+    width: 1px;
+  }
+}
+
+.hide {
+  position: absolute;
+  width: 260%;
+  height: 120%;
+  bottom: -10%;
+  left: -85%;
+  background-color: var(--bg);
+}

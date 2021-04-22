@@ -5,3 +5,11 @@
  */
 
 // You can delete this file if you're not using it
+import React from "react"
+import { AnimateSharedLayout } from "framer-motion"
+import "./src/styles/normalize.css"
+import "./src/styles/style.scss"
+
+export const wrapPageElement = ({ element }) => (
+  <AnimateSharedLayout>{element}</AnimateSharedLayout>
+)
