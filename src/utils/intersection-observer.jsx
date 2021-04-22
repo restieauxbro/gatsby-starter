@@ -30,10 +30,9 @@ export const IntersectionObserver = ({
   );
 };
 
- 
 
 
-const ReceivesIntersectionData = () => {
+export const ReceivesIntersectionData = () => {
   const { inView } = useContext(IntersectionContext)
   return (
     <>

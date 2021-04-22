@@ -12,17 +12,19 @@ import { useStaticQuery, graphql } from "gatsby"
 const Layout = ({ children }) => {
   return (
     <>
-      <div className="margin" style={{ marginTop: 100 }}>
-        <main>{children}</main>
-        <footer
-          style={{
-            marginTop: `2rem`,
-          }}
-        >
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
-        </footer>
+      <div className="margin">
+        <div style={{ marginTop: 100 }}>
+          <main>{children}</main>
+          <footer
+            style={{
+              marginTop: `2rem`,
+            }}
+          >
+            © {new Date().getFullYear()}, Built with
+            {` `}
+            <a href="https://www.gatsbyjs.com">Gatsby</a>
+          </footer>
+        </div>
       </div>
     </>
   )
