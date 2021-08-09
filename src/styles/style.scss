@@ -3,6 +3,8 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,700;1,400&display=swap");
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap');
+
 /* CSS Custom Properties Definitions */
 body {
   --maxWidth-none: "none";
@@ -31,7 +33,7 @@ body {
   --spacing-20: 5rem;
   --spacing-24: 6rem;
   --spacing-32: 8rem;
-  --fontFamily-sans: futara, "Open Sans", Montserrat, system-ui, -apple-system,
+  --fontFamily-sans: 'Montserrat', "Open Sans", Montserrat, system-ui, -apple-system,
     BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
     sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
     "Noto Color Emoji";
@@ -70,6 +72,8 @@ body {
   --dark-grey: rgb(var(--dark-grey-rgb));
   --darker-grey: rgb(30, 30, 33);
 
+  --radius: 7px;
+
   --background: linear-gradient(to top, pink, white);
   --bg: rgb(245, 245, 245);
   --color-text: var(--dark-grey);
@@ -82,9 +86,9 @@ body {
 }
 
 body.dark {
-  --background: var(--dark-grey);
-  --bg: var(--dark-grey);
-  --bg-2: var(--darker-grey);
+  --background: var(--darker-grey);
+  --bg: var(--darker-grey);
+  --bg-2: var(--dark-grey);
   --bg-rgb: var(--dark-grey-rgb);
   --color-text: var(--white);
   --color-heading: var(--white);
@@ -131,7 +135,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-heading);
+  font-family: var(--font-body);
   margin-top: var(--spacing-12);
   margin-bottom: var(--spacing-6);
   line-height: var(--lineHeight-tight);
@@ -149,6 +153,7 @@ h6 {
 }
 
 h1 {
+  font-family: var(--font-heading);
   font-weight: var(--fontWeight-medium);
   font-size: var(--fontSize-headings);
   color: var(--color-heading);
@@ -285,7 +290,7 @@ a:focus {
 
 .margin {
   max-width: 2000px;
-  padding: 0 70px;
+  padding: 0 clamp(1rem, 15vw, 70px);
   margin: 0 auto;
   @media (max-width: 700px) {
     padding: 0 var(--spacing-6);

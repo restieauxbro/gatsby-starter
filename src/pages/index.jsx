@@ -5,43 +5,17 @@ import "../styles/landing-page.scss"
 import { motion } from "framer-motion"
 import { IntersectionObserver } from "../utils/intersection-observer"
 import { IntersectionContext } from "../utils/intersection-observer"
-import {spring} from '../utils/animations'
+import { spring } from "../utils/animations"
+import Cursor from "../components/layout/cursor"
 
 const IndexPage = () => {
-  const [gridLayout, changeGridLayout] = useState("0 0 1fr 0")
+  const [gridLayout, changeGridLayout] = useState("0 0 0 0")
   return (
     <>
       <Layout>
         <SEO title="Home" />
 
-        <IntersectionObserver>
-          <SectionWithChangingGrid
-            changeGridLayout={changeGridLayout}
-            newLayout="0 0 1fr 0"
-          >
-            <h1>Looking for me?</h1>
-          </SectionWithChangingGrid>
-        </IntersectionObserver>
-        <div style={{ height: "100vh" }} />
-        <IntersectionObserver>
-          <SectionWithChangingGrid
-            changeGridLayout={changeGridLayout}
-            newLayout="0 1fr 1fr 1fr"
-          >
-            <h1>Looking for me?</h1>
-          </SectionWithChangingGrid>
-        </IntersectionObserver>
-        <div style={{ height: "100vh" }} />
-        <IntersectionObserver>
-          <SectionWithChangingGrid
-            changeGridLayout={changeGridLayout}
-            newLayout="2fr 0 1fr 0"
-          >
-            <h1>Hey</h1>
-          </SectionWithChangingGrid>
-        </IntersectionObserver>
-        <div style={{ height: "100vh" }} />
-        <GridParent gridLayout={gridLayout} />
+        <h1>Hey how about we fuck</h1>
       </Layout>
     </>
   )
@@ -58,11 +32,10 @@ const GridParent = ({ gridLayout }) => {
             gridTemplateColumns: gridLayout,
           }}
         >
-          <div/>
+          <div />
           <motion.div transition={spring} layout className="line vertical" />
           <motion.div transition={spring} layout className="line vertical" />
           <motion.div transition={spring} layout className="line vertical" />
-          
         </div>
       </div>
     </>

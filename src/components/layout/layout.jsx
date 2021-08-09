@@ -14,7 +14,7 @@ const Layout = ({ children }) => {
     <>
       <div className="margin">
         <div style={{ marginTop: 100 }}>
-          <main>{children}</main>
+          {children}
           <footer
             style={{
               marginTop: `2rem`,
