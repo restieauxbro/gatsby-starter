@@ -13,7 +13,6 @@ const Contact = () => {
         layoutId="box"
         animate={{ backgroundColor: "#fafafa" }}
       />
-           <div></div>
     </Layout>
   )
 }

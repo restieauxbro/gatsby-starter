@@ -1,0 +1,50 @@
+backend:
+  name: git-gateway
+  repo: restieauxbro/gatsby-starter
+  branch: "main"
+
+media_folder: content/assets
+public_folder: ../assets
+site_url: https://restio.space
+
+collections:
+  - name: caseStudies
+    label: "Case studies"
+    folder: content/caseStudies
+    create: true
+    editor:
+      preview: false
+    fields:
+      - { name: name, label: "Name", hint: "For internal reference only" }
+      - {
+          name: title,
+          label: "Candidate title",
+          hint: "Something like 'Engineering candidate'",
+        }
+      - { name: date, label: "Date available", widget: date }
+      - { name: location, label: "Location", widget: "map" }
+      - name: "industry"
+        label: "Industry"
+        widget: "select"
+        options:
+          - { label: "Engineering", value: "Engineering" }
+          - { label: "Manufacturing", value: "Manufacturing" }
+          - { label: "Butchery and Bakery", value: "Butchery and Bakery" }
+          - {
+              label: "Print, packaging and signmaking",
+              value: "Print, packaging and signmaking",
+            }
+          - { label: "Forestry", value: "Forestry" }
+          - { label: "Furniture", value: "Furniture" }
+
+      - {
+          name: description,
+          label: Description,
+          hint: "One paragraph of about 150 words",
+          widget: "text",
+        }
+      # - { name: body, label: Body, widget: markdown }
+      - label: "Highlights"
+        name: "highlights"
+        widget: "list"
+        field: { label: Highlight, name: highlight, widget: string }
