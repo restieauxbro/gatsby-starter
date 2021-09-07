@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react"
 import { useMediaQuery } from "react-responsive"
 import { motion, AnimatePresence } from "framer-motion"
 import { ThemeToggler } from "gatsby-plugin-dark-mode"
-import { Link } from "gatsby"
+import {Link} from 'gatsby'
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -75,7 +75,7 @@ const Nav = ({ menuOpen, setMenuOpen }) => {
 }
 
 const Menu = ({ menuOpen, setMenuOpen }) => {
-  const [active, setActive] = useState(false)
+    const [active, setActive] = useState(false)
 
   const isActive = ({ isPartiallyCurrent }) => {
     return isPartiallyCurrent ? setActive(true) : setActive(false)
@@ -100,7 +100,7 @@ const Menu = ({ menuOpen, setMenuOpen }) => {
               animate="animate"
             >
               {menuItems.map(({ title, link }) => (
-                <Link to={link} className="mobile-menu-items">
+                <Link to={link} className="mobile-menu-items" >
                   <div>{title}</div>
                 </Link>
               ))}
@@ -130,6 +130,7 @@ const Switcher = () => {
     </ThemeToggler>
   )
 }
+
 
 const menuItems = [
   {
@@ -175,39 +176,24 @@ const useIsTopOfPage = () => {
 // SCROLLING DOWN
 
 const useUserIsScrollingDown = () => {
-  const [scrollDir, setScrollDir] = useState(false) // True is scrolling down, false is scrolling up
+  const [isScrollingDown, setIsScrollingDown] = useState(false)
+
+  const handleScrollingDown = event => {
+    if (event.deltaY > 0) {
+      setIsScrollingDown(true)
+    } else {
+      setIsScrollingDown(false)
+    }
+  }
 
   useEffect(() => {
-    const threshold = 20
-    let lastScrollY = window.pageYOffset
-    let ticking = false
-
-    const updateScrollDir = () => {
-      // decides ticking true or false
-      const scrollY = window.pageYOffset
-      if (Math.abs(scrollY - lastScrollY) < threshold) {
-        ticking = false
-        return
-      }
-      setScrollDir(scrollY > lastScrollY ? true : false)
-      lastScrollY = scrollY > 0 ? scrollY : 0
-      ticking = false
+    window.addEventListener("wheel", handleScrollingDown)
+    return () => {
+      window.removeEventListener("wheel", handleScrollingDown)
     }
+  }, [])
 
-    const onScroll = () => {
-      if (!ticking) {
-        window.requestAnimationFrame(updateScrollDir)
-        ticking = true
-      }
-    }
-
-    window.addEventListener("scroll", onScroll)
-    console.log(scrollDir)
-
-    return () => window.removeEventListener("scroll", onScroll)
-  }, [scrollDir])
-
-  return scrollDir
+  return isScrollingDown
 }
 
 const stagger = {

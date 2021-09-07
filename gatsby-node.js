@@ -1,42 +1,7 @@
-const path = require(`path`)
+/**
+ * Implement Gatsby's Node APIs in this file.
+ *
+ * See: https://www.gatsbyjs.com/docs/node-apis/
+ */
 
-exports.createPages = async ({ graphql, actions, reporter }) => {
-  const postTemplate = path.resolve(`./src/templates/post.jsx`)
-
-  // Query Ghost data
-  const result = await graphql(`
-    {
-      allGhostPost(sort: { order: ASC, fields: published_at }) {
-        edges {
-          node {
-            slug
-          }
-        }
-      }
-    }
-  `)
-
-  // Handle errors
-  if (result.errors) {
-    reporter.panicOnBuild(`Error while running GraphQL query.`)
-    return
-  }
-
-  if (!result.data.allGhostPost) {
-    return
-  }
-
-  // Create pages for each Ghost post
-  const items = result.data.allGhostPost.edges
-  items.forEach(({ node }) => {
-    node.url = `/projects/${node.slug}/`
-
-    actions.createPage({
-      path: node.url,
-      component: postTemplate,
-      context: {
-        slug: node.slug,
-      },
-    })
-  })
-}
+// You can delete this file if you're not using it

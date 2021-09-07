@@ -36,13 +36,6 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
-    {
-      resolve: `gatsby-source-ghost`,
-      options: {
-        apiUrl: `https://restio.ghost.io`,
-        contentApiKey: `76f37c577e6a19ebcfca80a387`,
-      },
-    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
