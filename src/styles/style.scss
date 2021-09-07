@@ -31,10 +31,11 @@ body {
   --spacing-20: 5rem;
   --spacing-24: 6rem;
   --spacing-32: 8rem;
-  --fontFamily-sans: futara, "Open Sans", Montserrat, system-ui, -apple-system,
-    BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
-    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
-    "Noto Color Emoji";
+
+  --fontFamily-sans: -apple-system, "Open Sans", Montserrat, system-ui,
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Noto Color Emoji";
   --fontFamily-serif: ivymode, "gallery_modernregular", "Merriweather",
     "Georgia", Cambria, "Times New Roman", Times, serif;
   --font-body: var(--fontFamily-sans);
@@ -60,17 +61,16 @@ body {
   --fontSize-6: 2.488rem;
   --fontSize-7: 2.986rem;
   --fontSize-headings: clamp(6rem, 7vw, 10rem);
-  --color-primary: #005b99;
 
+  --color-primary: #005b99;
   --color-text-light: #747b86;
   --color-accent: #d1dce5;
   --white: #f6f6f6;
   --off-white: #f1f1f1;
-  --dark-grey-rgb: 38, 38, 42;
+  --dark-grey-rgb: 30, 30, 34;
   --dark-grey: rgb(var(--dark-grey-rgb));
-  --darker-grey: rgb(30, 30, 33);
+  --darker-grey: rgb(26, 26, 30);
 
-  --background: linear-gradient(to top, pink, white);
   --bg: rgb(245, 245, 245);
   --color-text: var(--dark-grey);
   --color-heading: rgb(63, 62, 62);
